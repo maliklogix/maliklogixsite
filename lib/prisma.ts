@@ -1,6 +1,16 @@
 import { PrismaClient } from '@prisma/client';
 
-export const isDatabaseConfigured = Boolean(process.env.DATABASE_URL);
+function readDatabaseUrlFromEnv(): string | undefined {
+  // Hostinger panels sometimes use mixed-case env keys; Linux env is case-sensitive.
+  return (
+    process.env.DATABASE_URL ||
+    process.env.Database_URL ||
+    process.env.DATABASEUrl ||
+    process.env.DatabaseUrl
+  );
+}
+
+export const isDatabaseConfigured = Boolean(readDatabaseUrlFromEnv());
 
 const globalForPrisma = globalThis as unknown as {
   prisma?: PrismaClient;
@@ -22,9 +32,8 @@ function ensureMysqlPoolParams(url: string): string {
   return `${url}${sep}connection_limit=${encodeURIComponent(limit)}&pool_timeout=20&connect_timeout=10`;
 }
 
-const resolvedUrl = process.env.DATABASE_URL
-  ? ensureMysqlPoolParams(process.env.DATABASE_URL)
-  : undefined;
+const rawUrl = readDatabaseUrlFromEnv();
+const resolvedUrl = rawUrl ? ensureMysqlPoolParams(rawUrl) : undefined;
 
 if (process.env.NODE_ENV === 'development' && resolvedUrl) {
   console.log(
