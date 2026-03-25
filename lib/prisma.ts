@@ -27,7 +27,9 @@ function ensureMysqlPoolParams(url: string): string {
   if (!url || /connection_limit=/i.test(url)) {
     return url;
   }
-  const limit = process.env.PRISMA_CONNECTION_LIMIT ?? '2';
+  // Default to 1 connection per Node process: Shared MySQL plans on Hostinger
+  // often have very low max_user_connections.
+  const limit = process.env.PRISMA_CONNECTION_LIMIT ?? '1';
   const sep = url.includes('?') ? '&' : '?';
   return `${url}${sep}connection_limit=${encodeURIComponent(limit)}&pool_timeout=20&connect_timeout=10`;
 }

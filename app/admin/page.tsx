@@ -6,11 +6,10 @@ export default async function AdminDashboardPage() {
   let counts = { total: 0, published: 0, draft: 0, scheduled: 0 };
   if (isDatabaseConfigured) {
     try {
-      const [total, published, draft] = await prisma.$transaction([
-        prisma.post.count(),
-        prisma.post.count({ where: { status: 'published' } }),
-        prisma.post.count({ where: { status: 'draft' } }),
-      ]);
+      // Run sequentially to keep Hostinger/MySQL connection usage minimal.
+      const total = await prisma.post.count();
+      const published = await prisma.post.count({ where: { status: 'published' } });
+      const draft = await prisma.post.count({ where: { status: 'draft' } });
       counts = { total, published, draft, scheduled: 0 };
     } catch {
       counts = { total: 0, published: 0, draft: 0, scheduled: 0 };
