@@ -26,9 +26,10 @@ export async function safeQuery<T>(
     if (isConnectionError) {
       console.warn('[Prisma] Connection lost, attempting one-time retry...');
       try {
-        await prisma.$disconnect();
-        await prisma.$connect();
-        // Retry the query once
+        // Avoid $disconnect/$connect churn on Hostinger: with low connection limits
+        // it can cause pool starvation and even Prisma engine panics.
+        await new Promise((r) => setTimeout(r, 200));
+        // Retry the query once using the existing pool/client.
         return await queryFn();
       } catch (retryError) {
         console.error('[Prisma] Retry failed after reconnection:', retryError);

@@ -6,10 +6,17 @@ export default async function AdminDashboardPage() {
   let counts = { total: 0, published: 0, draft: 0, scheduled: 0 };
   if (isDatabaseConfigured) {
     try {
-      // Run sequentially to keep Hostinger/MySQL connection usage minimal.
-      const total = await prisma.post.count();
-      const published = await prisma.post.count({ where: { status: 'published' } });
-      const draft = await prisma.post.count({ where: { status: 'draft' } });
+      // Single query (GROUP BY) reduces total DB time + pool contention.
+      const grouped = await prisma.post.groupBy({
+        by: ['status'],
+        _count: { _all: true },
+      });
+
+      const get = (status: string) => grouped.find((g) => g.status === status)?._count._all ?? 0;
+      const published = get('published');
+      const draft = get('draft');
+      const total = grouped.reduce((sum, g) => sum + (g._count._all ?? 0), 0);
+
       counts = { total, published, draft, scheduled: 0 };
     } catch {
       counts = { total: 0, published: 0, draft: 0, scheduled: 0 };

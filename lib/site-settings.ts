@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { isDatabaseConfigured, prisma } from '@/lib/prisma';
 import {
   CONTACT_EMAIL,
@@ -56,7 +57,7 @@ export function buildWhatsAppPrefilled(whatsAppNumber: string) {
   return `https://wa.me/${number}?text=Hi%20MalikLogix%2C%20I%27m%20interested%20in%20your%20AI%20services!`;
 }
 
-export async function getSiteSettings(): Promise<SiteSettings> {
+export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
   if (!isDatabaseConfigured) return defaultSiteSettings;
 
   try {
@@ -102,4 +103,4 @@ export async function getSiteSettings(): Promise<SiteSettings> {
   } catch {
     return defaultSiteSettings;
   }
-}
+});
