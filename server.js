@@ -14,7 +14,10 @@ let keepAliveStarted = false;
 
 app.prepare().then(() => {
   createServer((req, res) => {
-    const host = req.headers.host || '';
+    // Hostinger proxy sets x-forwarded-host, while req.headers.host might be localhost
+    const forwardedHost = req.headers['x-forwarded-host'];
+    const rawHost = (Array.isArray(forwardedHost) ? forwardedHost[0] : forwardedHost) || req.headers.host || '';
+    const host = rawHost.split(':')[0].toLowerCase();
 
     // 1. Instantly intercept and redirect www traffic BEFORE Next.js or Prisma touches it
     if (host.startsWith('www.')) {
