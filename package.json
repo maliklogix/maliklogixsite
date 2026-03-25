@@ -2,6 +2,7 @@
   "name": "maliklogix",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
   "scripts": {
     "dev": "next dev --webpack",
     "prebuild": "prisma generate",
