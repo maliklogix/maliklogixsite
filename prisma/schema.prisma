@@ -1,0 +1,251 @@
+generator client {
+  provider = "prisma-client-js"
+  // Default library engine: smaller footprint than "binary" on the server (Hostinger-friendly).
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum PostStatus {
+  draft
+  published
+}
+
+enum SubscriberStatus {
+  active
+  unsubscribed
+  bounced
+}
+
+enum InquiryStatus {
+  new
+  contacted
+  proposal
+  won
+  lost
+}
+
+enum AffiliateStatus {
+  pending
+  approved
+  suspended
+}
+
+model Post {
+  id              String     @id @default(uuid())
+  title           String
+  subtitle        String?
+  slug            String     @unique
+  content_html    String?    @db.Text
+  cover_image_url String?    @db.LongText
+  author_name     String?    @default("MalikLogix")
+  author_avatar   String?    @db.LongText
+  author_twitter  String?    @default("maliklogix")
+  category        String?    @default("AI Marketing")
+  tags            Json       @default("[]")
+  read_time_mins  Int?       @default(4)
+  status          PostStatus @default(draft)
+  featured        Boolean?   @default(false)
+  subscriber_only Boolean?   @default(false)
+  views           BigInt?    @default(0)
+  sponsor_name    String?
+  sponsor_logo    String?    @db.LongText
+  sponsor_url     String?
+  sponsor_body    String?    @db.Text
+  seo_title       String?
+  seo_description String?    @db.Text
+  og_image        String?    @db.LongText
+  published_at    DateTime?
+  created_at      DateTime?  @default(now())
+  updated_at      DateTime?  @default(now())
+
+  @@index([status])
+  @@index([category])
+  @@map("posts")
+}
+
+model AiTool {
+  id         String    @id @default(uuid())
+  name       String
+  tagline    String
+  url        String
+  logo_url   String?
+  category   String?   @default("Productivity")
+  featured   Boolean?  @default(false)
+  sort_order Int?      @default(0)
+  active     Boolean?  @default(true)
+  created_at DateTime? @default(now())
+
+  @@map("ai_tools")
+}
+
+model Subscriber {
+  id              String           @id @default(uuid())
+  email           String           @unique
+  first_name      String?
+  source          String?          @default("website")
+  tags            Json             @default("[]")
+  status          SubscriberStatus @default(active)
+  ip_address      String?
+  subscribed_at   DateTime?        @default(now())
+  unsubscribed_at DateTime?
+
+  @@index([status])
+  @@map("subscribers")
+}
+
+model Inquiry {
+  id          String        @id @default(uuid())
+  name        String
+  email       String
+  phone       String?
+  company     String?
+  service     String?
+  budget      String?
+  message     String        @db.Text
+  source      String?       @default("contact-page")
+  status      InquiryStatus @default(new)
+  admin_notes String?       @db.Text
+  created_at  DateTime?     @default(now())
+
+  @@map("inquiries")
+}
+
+model CaseStudy {
+  id             String    @id @default(uuid())
+  title          String
+  slug           String    @unique
+  client_name    String?
+  industry       String?
+  client_logo    String?
+  challenge_html String?   @db.Text
+  solution_html  String?   @db.Text
+  results_html   String?   @db.Text
+  cover_image    String?
+  services_used  Json      @default("[]")
+  stat_1_label   String?
+  stat_1_value   String?
+  stat_2_label   String?
+  stat_2_value   String?
+  stat_3_label   String?
+  stat_3_value   String?
+  testimonial    String?   @db.Text
+  testimonial_by String?
+  featured       Boolean?  @default(false)
+  status         String?   @default("draft")
+  published_at   DateTime?
+  created_at     DateTime? @default(now())
+
+  @@map("case_studies")
+}
+
+model Testimonial {
+  id         String   @id @default(uuid())
+  name       String
+  role       String?
+  company    String?
+  avatar     String?
+  content    String   @db.Text
+  rating     Int?     @default(5)
+  service    String?
+  featured   Boolean? @default(true)
+  sort_order Int?     @default(0)
+
+  @@map("testimonials")
+}
+
+model Affiliate {
+  id              String          @id @default(uuid())
+  full_name       String
+  email           String          @unique
+  website         String?
+  promo_method    String?
+  referral_code   String          @unique
+  commission_pct  Int?            @default(20)
+  status          AffiliateStatus @default(pending)
+  total_clicks    Int?            @default(0)
+  total_referrals Int?            @default(0)
+  total_earned    Decimal?        @default(0) @db.Decimal(10, 2)
+  total_paid      Decimal?        @default(0) @db.Decimal(10, 2)
+  paypal_email    String?
+  created_at      DateTime?       @default(now())
+
+  @@index([status])
+  @@index([referral_code])
+  @@map("affiliates")
+}
+
+model Portfolio {
+  id          String    @id @default(uuid())
+  title       String
+  slug        String    @unique
+  description String?   @db.Text
+  category    String?
+  stack       Json      @default("[]")
+  image       String?
+  live_url    String?
+  github_url  String?   @default("https://github.com/maliklogix")
+  featured    Boolean?  @default(false)
+  sort_order  Int?      @default(0)
+  status      String?   @default("published")
+  created_at  DateTime? @default(now())
+
+  @@map("portfolio")
+}
+
+model Setting {
+  id                    Int       @id @default(1)
+  agency_name           String?   @default("MalikLogix")
+  tagline               String?   @default("AI-Powered Growth. Built to Scale.")
+  nl_tagline            String?   @default("Learn AI marketing in 4 minutes/day. Join 10,000+ business owners.")
+  logo_url              String?
+  favicon_url           String?
+  contact_email         String?   @default("hello@maliklogix.com")
+  phone                 String?   @default("+92 315 8304046")
+  whatsapp              String?   @default("923158304046")
+  address               String?   @default("Lahore, Pakistan")
+  twitter_url           String?   @default("https://twitter.com/maliklogix")
+  linkedin_url          String?   @default("https://linkedin.com/company/maliklogix")
+  instagram_url         String?   @default("https://instagram.com/maliklogix")
+  github_url            String?   @default("https://github.com/maliklogix")
+  facebook_url          String?
+  tiktok_url            String?
+  youtube_url           String?
+  meta_title            String?   @default("MalikLogix — AI Digital Agency")
+  meta_description      String?   @default("MalikLogix uses cutting-edge AI to grow your business. AI Marketing, SEO, Automation, Content, Paid Ads & Shopify.")
+  og_image              String?
+  ga_id                 String?
+  topbar_active         Boolean?  @default(true)
+  topbar_text           String?   @default("We automate openclaw let's start")
+  topbar_cta_text       String?   @default("Start OpenClaw →")
+  topbar_cta_link       String?   @default("/contact")
+  affiliate_commission  Int?      @default(20)
+  subscriber_count_text String?   @default("10,000+")
+  updated_at            DateTime? @default(now())
+
+  @@map("settings")
+}
+
+model Partner {
+  id             String    @id @default(uuid())
+  name           String
+  logo_url       String
+  rating         String?   @default("5.0")
+  features       Json      @default("[]")
+  starting_price String?
+  cta_link       String    @db.Text
+  coupon_code    String?
+  show_deal      Boolean?  @default(false)
+  category       String?   @default("Hosting")
+  commission_type String?  @default("CPA")
+  region         String?   @default("Global")
+  payout_method  String?   @default("Bank Transfer")
+  rank           Int?      @default(0)
+  active         Boolean?  @default(true)
+  created_at     DateTime? @default(now())
+  updated_at     DateTime? @default(now())
+
+  @@map("partners")
+}
