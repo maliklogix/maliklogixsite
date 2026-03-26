@@ -17,6 +17,20 @@ export default function ToolsPage() {
   const tools: Tool[] = useMemo(
     () => [
       {
+        href: '/tools/api-key-tester',
+        name: 'API Key Tester',
+        description: 'Instantly validate 15+ API keys — OpenAI, Claude, Gemini, Stripe & more. Free, private, no storage.',
+        detailsTitle: 'What you get',
+        detailsBody:
+          'A secure local proxy environment to test your API keys against 15+ providers including LLMs, image generators, and social platforms without CORS issues.',
+        bullets: [
+          '15 Providers Supported',
+          'Local proxy for CORS',
+          'Privacy first (no storage)',
+          'Session history',
+        ],
+      },
+      {
         href: '/tools/roi-calculator',
         name: 'AI ROI Calculator',
         description: 'Estimate how much extra revenue AI marketing can unlock for you.',
