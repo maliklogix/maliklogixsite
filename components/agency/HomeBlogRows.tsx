@@ -98,7 +98,7 @@ export default function HomeBlogRows() {
               <div className="mt-4 flex items-center gap-2">
                 <div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0">
                   <Image
-                    src="/ml-logo.png?v=4"
+                    src="/logo.webp"
                     alt="ML"
                     width={24}
                     height={24}

@@ -4,7 +4,7 @@ module.exports = {
     script: 'server.js',
     instances: 1,
     exec_mode: 'fork',           // ✅ Crucial for shared/limited VPS hosting
-    max_memory_restart: '400M',  // ✅ Prevents OOM (Out of Memory) crashes
+    max_memory_restart: '1.3G',    // ✅ Optimized for a 2GB RAM VPS (prevents premature restarts)
     env: {
       NODE_ENV: 'production',
       PORT: 3000,

@@ -5,7 +5,7 @@ export async function GET() {
   try {
     const posts = await Promise.race([
       getAllMDXPosts(),
-      new Promise<any[]>((resolve) => setTimeout(() => resolve([]), 10000))
+      new Promise<any[]>((resolve) => setTimeout(() => resolve([]), 30000))
     ]);
     return NextResponse.json(posts);
   } catch (error) {

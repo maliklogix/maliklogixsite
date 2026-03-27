@@ -26,7 +26,7 @@ export function Footer({ settings }: Props) {
           <div>
             <div className="flex items-center gap-3">
               <Image
-                src="/ml-logo.png?v=4"
+                src="/logo.webp"
                 alt={settings.agency_name}
                 width={42}
                 height={42}

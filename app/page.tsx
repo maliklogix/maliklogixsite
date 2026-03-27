@@ -1,12 +1,15 @@
 import Link from 'next/link';
-import { Footer } from '@/components/agency/Footer';
-import { MegaMenu } from '@/components/agency/MegaMenu';
+import dynamic from 'next/dynamic';
 import { TopBar } from '@/components/agency/TopBar';
-import { WhatsAppFAB } from '@/components/agency/WhatsAppFAB';
-import HomeBlogRows from '@/components/agency/HomeBlogRows';
-import { HomeNewsletterCTA } from '@/components/agency/HomeNewsletterCTA';
-import { ToolsWeUse } from '@/components/agency/ToolsWeUse';
+import { MegaMenu } from '@/components/agency/MegaMenu';
 import { buildWhatsAppPrefilled, getSiteSettings } from '@/lib/site-settings';
+
+// ✅ Dynamically import components below the fold to slash initial JS payload
+const HomeBlogRows = dynamic(() => import('@/components/agency/HomeBlogRows'));
+const ToolsWeUse = dynamic(() => import('@/components/agency/ToolsWeUse').then(m => m.ToolsWeUse));
+const HomeNewsletterCTA = dynamic(() => import('@/components/agency/HomeNewsletterCTA').then(m => m.HomeNewsletterCTA));
+const Footer = dynamic(() => import('@/components/agency/Footer').then(m => m.Footer));
+const WhatsAppFAB = dynamic(() => import('@/components/agency/WhatsAppFAB').then(m => m.WhatsAppFAB));
 
 export default async function Home() {
   const settings = await getSiteSettings();

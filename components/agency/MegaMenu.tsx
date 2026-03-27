@@ -120,7 +120,7 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
           <div className="h-16 flex items-center justify-between w-full">
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="/ml-logo.png?v=4"
+                src="/logo.webp"
                 alt={settings.agency_name}
                 width={40}
                 height={40}
@@ -329,7 +329,7 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                     <div className="p-4 border-b border-[#E4E4EB] flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <Image
-                          src="/ml-logo.png?v=4"
+                          src="/logo.webp"
                           alt={settings.agency_name}
                           width={32}
                           height={32}
