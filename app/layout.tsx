@@ -55,6 +55,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${bricolage.variable} ${dmSans.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[var(--color-body)] text-[var(--color-text)]" suppressHydrationWarning>
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9083888001969660"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+
         {/* Google Analytics (ga4) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-GG65WXC85C"
