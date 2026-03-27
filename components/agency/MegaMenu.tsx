@@ -134,7 +134,7 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
               <nav className="hidden md:flex items-center gap-6 text-sm">
                 {/* Work Dropdown */}
                 <div className="relative group grayscale-0">
-                  <button className="flex items-center gap-1 text-[#0D0D12] group-hover:text-[#5B3CF5] transition-colors">
+                  <button className="flex items-center gap-1 text-[#0D0D12] group-hover:text-[#111111] transition-colors">
                     Work
                     <svg
                       width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
@@ -144,20 +144,20 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                     </svg>
                   </button>
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                    <div className="bg-white border border-[#E4E4EB] rounded-2xl p-2 w-48 shadow-2xl shadow-[#5B3CF5]/10 overflow-hidden">
-                      <Link href="/services/ai-marketing" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] rounded-xl transition-all">AI Marketing</Link>
-                      <Link href="/services/automation" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] rounded-xl transition-all">Automation</Link>
-                      <Link href="/services/content-creation" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] rounded-xl transition-all">Content AI</Link>
-                      <Link href="/services/seo-geo" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] rounded-xl transition-all">SEO & GEO</Link>
-                      <Link href="/case-studies" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] rounded-xl transition-all">Case Studies</Link>
-                      <Link href="/portfolio" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] rounded-xl transition-all">Portfolio</Link>
+                    <div className="bg-white border border-[#E4E4EB] rounded-2xl p-2 w-48 shadow-2xl shadow-black/5 overflow-hidden">
+                      <Link href="/services/ai-marketing" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#f9f9f7] rounded-xl transition-all">AI Marketing</Link>
+                      <Link href="/services/automation" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#f9f9f7] rounded-xl transition-all">Automation</Link>
+                      <Link href="/services/content-creation" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#f9f9f7] rounded-xl transition-all">Content AI</Link>
+                      <Link href="/services/seo-geo" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#f9f9f7] rounded-xl transition-all">SEO & GEO</Link>
+                      <Link href="/case-studies" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#f9f9f7] rounded-xl transition-all">Case Studies</Link>
+                      <Link href="/portfolio" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#f9f9f7] rounded-xl transition-all">Portfolio</Link>
                     </div>
                   </div>
                 </div>
 
                 {/* Learn Dropdown */}
                 <div className="relative group grayscale-0">
-                  <button className="flex items-center gap-1 text-[#0D0D12] group-hover:text-[#5B3CF5] transition-colors">
+                  <button className="flex items-center gap-1 text-[#0D0D12] group-hover:text-[#111111] transition-colors">
                     Learn
                     <svg
                       width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
@@ -167,17 +167,18 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                     </svg>
                   </button>
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                    <div className="bg-white border border-[#E4E4EB] rounded-2xl p-2 w-48 shadow-2xl shadow-[#5B3CF5]/10 overflow-hidden">
-                      <Link href="/docs" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] rounded-xl transition-all">Docs</Link>
-                      <Link href="/newsletter" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] rounded-xl transition-all">Newsletter</Link>
-                      <Link href="/blog" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] rounded-xl transition-all">Blog</Link>
+                    <div className="bg-white border border-[#E4E4EB] rounded-2xl p-2 w-48 shadow-2xl shadow-black/5 overflow-hidden">
+                      <Link href="/founder" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#f9f9f7] rounded-xl transition-all font-bold">The Founder</Link>
+                      <Link href="/docs" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#f9f9f7] rounded-xl transition-all">Docs</Link>
+                      <Link href="/newsletter" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#f9f9f7] rounded-xl transition-all">Newsletter</Link>
+                      <Link href="/blog" className="block px-4 py-2.5 text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#f9f9f7] rounded-xl transition-all">Blog</Link>
                     </div>
                   </div>
                 </div>
 
                 {/* Tools Dropdown (Mega Menu) */}
                 <div className="relative group grayscale-0">
-                  <button className="flex items-center gap-1 text-[#0D0D12] group-hover:text-[#5B3CF5] transition-colors py-4">
+                  <button className="flex items-center gap-1 text-[#0D0D12] group-hover:text-[#111111] transition-colors py-4">
                     Tools
                     <svg
                       width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
@@ -191,7 +192,7 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                       {/* Column 1: Free Tools */}
                       <div className="space-y-4">
                         <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-lg bg-[#F0ECFF] flex items-center justify-center text-[#5B3CF5]">
+                          <div className="w-8 h-8 rounded-lg bg-[#F0ECFF] flex items-center justify-center text-[#111111]">
                             <Wrench size={18} />
                           </div>
                           <div>
@@ -201,8 +202,8 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                         </div>
                         <div className="h-px bg-[#E4E4EB] w-full" />
                         <div className="flex flex-col gap-1">
-                          <Link href="/tools/api-key-tester" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">API Key Tester</Link>
-                          <Link href="/tools" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Browse All Tools</Link>
+                          <Link href="/tools/api-key-tester" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">API Key Tester</Link>
+                          <Link href="/tools" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Browse All Tools</Link>
                         </div>
                       </div>
 
@@ -219,11 +220,11 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                         </div>
                         <div className="h-px bg-[#E4E4EB] w-full" />
                         <div className="flex flex-col gap-1">
-                          <Link href="/tools/ai-skills" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Browse All Skills</Link>
-                          <Link href="/tools/ai-skills?category=marketing" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Marketing & Sales</Link>
-                          <Link href="/tools/ai-skills?category=automation" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Automation</Link>
-                          <Link href="/tools/ai-skills?category=seo" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">SEO & Research</Link>
-                          <Link href="/tools/ai-skills?view=integrations" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Browse by Integration</Link>
+                          <Link href="/tools/ai-skills" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Browse All Skills</Link>
+                          <Link href="/tools/ai-skills?category=marketing" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Marketing & Sales</Link>
+                          <Link href="/tools/ai-skills?category=automation" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Automation</Link>
+                          <Link href="/tools/ai-skills?category=seo" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">SEO & Research</Link>
+                          <Link href="/tools/ai-skills?view=integrations" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Browse by Integration</Link>
                         </div>
                       </div>
 
@@ -240,9 +241,9 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                         </div>
                         <div className="h-px bg-[#E4E4EB] w-full" />
                         <div className="flex flex-col gap-1">
-                          <Link href="/collaborations" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Partner With Us</Link>
-                          <Link href="/affiliate" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Affiliate Program</Link>
-                          <Link href="/sponsor" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Sponsor MalikLogix</Link>
+                          <Link href="/collaborations" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Partner With Us</Link>
+                          <Link href="/affiliate" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Affiliate Program</Link>
+                          <Link href="/sponsor" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Sponsor MalikLogix</Link>
                         </div>
                       </div>
 
@@ -259,10 +260,10 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                         </div>
                         <div className="h-px bg-[#E4E4EB] w-full" />
                         <div className="flex flex-col gap-1">
-                          <Link href="/tools/openclaw/skillhub" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">SkillHub</Link>
-                          <Link href="/tools/openclaw/automation" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Automation Skills</Link>
-                          <Link href="/tools/openclaw/extensions" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Extensions</Link>
-                          <Link href="/tools/openclaw/submit" className="text-sm text-[#6E6E82] hover:text-[#5B3CF5] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Submit a Skill</Link>
+                          <Link href="/tools/openclaw/skillhub" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">SkillHub</Link>
+                          <Link href="/tools/openclaw/automation" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Automation Skills</Link>
+                          <Link href="/tools/openclaw/extensions" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Extensions</Link>
+                          <Link href="/tools/openclaw/submit" className="text-sm text-[#6E6E82] hover:text-[#111111] hover:bg-[#F0ECFF] p-2 rounded-lg transition-all">Submit a Skill</Link>
                         </div>
                       </div>
                     </div>
@@ -277,7 +278,7 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                   <Link
                     key={href}
                     href={href}
-                    className="text-[#0D0D12] hover:text-[#5B3CF5] transition-colors"
+                    className="text-[#0D0D12] hover:text-[#111111] transition-colors"
                   >
                     {label}
                   </Link>
@@ -355,31 +356,32 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
 
                     <div className="p-4 space-y-6">
                       <div className="space-y-3">
-                        <div className="text-xs font-bold uppercase tracking-widest text-[#5B3CF5]">Work</div>
+                        <div className="text-xs font-bold uppercase tracking-widest text-[#111111]">Work</div>
                         <div className="grid grid-cols-1 gap-2 pl-2">
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/services/ai-marketing" onClick={() => setMenuOpen(false)}>AI Marketing</Link>
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/services/automation" onClick={() => setMenuOpen(false)}>Automation</Link>
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/services/content-creation" onClick={() => setMenuOpen(false)}>Content AI</Link>
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/services/seo-geo" onClick={() => setMenuOpen(false)}>SEO & GEO</Link>
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/case-studies" onClick={() => setMenuOpen(false)}>Case Studies</Link>
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/services/ai-marketing" onClick={() => setMenuOpen(false)}>AI Marketing</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/services/automation" onClick={() => setMenuOpen(false)}>Automation</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/services/content-creation" onClick={() => setMenuOpen(false)}>Content AI</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/services/seo-geo" onClick={() => setMenuOpen(false)}>SEO & GEO</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/case-studies" onClick={() => setMenuOpen(false)}>Case Studies</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
                         </div>
                       </div>
 
                       <div className="space-y-3">
-                        <div className="text-xs font-bold uppercase tracking-widest text-[#5B3CF5]">Learn</div>
+                        <div className="text-xs font-bold uppercase tracking-widest text-[#111111]">Learn</div>
                         <div className="grid grid-cols-1 gap-2 pl-2">
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/docs" onClick={() => setMenuOpen(false)}>Docs</Link>
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/newsletter" onClick={() => setMenuOpen(false)}>Newsletter</Link>
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+                          <Link className="text-sm text-[#111111] font-bold" href="/founder" onClick={() => setMenuOpen(false)}>The Founder</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/docs" onClick={() => setMenuOpen(false)}>Docs</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/newsletter" onClick={() => setMenuOpen(false)}>Newsletter</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
                         </div>
                       </div>
 
                       <div className="space-y-3">
-                        <div className="text-xs font-bold uppercase tracking-widest text-[#5B3CF5]">Tools</div>
+                        <div className="text-xs font-bold uppercase tracking-widest text-[#111111]">Tools</div>
                         <Accordion className="w-full">
                           <AccordionItem value="item-1" className="border-none">
-                            <AccordionTrigger className="py-2 text-sm text-[#0D0D12] hover:text-[#5B3CF5] hover:no-underline">Free Tools</AccordionTrigger>
+                            <AccordionTrigger className="py-2 text-sm text-[#0D0D12] hover:text-[#111111] hover:no-underline">Free Tools</AccordionTrigger>
                             <AccordionContent>
                               <div className="flex flex-col gap-2 pl-4 pb-2 border-l border-[#E4E4EB] ml-2">
                                 <Link className="text-sm text-[#6E6E82]" href="/tools/api-key-tester" onClick={() => setMenuOpen(false)}>API Key Tester</Link>
@@ -388,7 +390,7 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                             </AccordionContent>
                           </AccordionItem>
                           <AccordionItem value="item-2" className="border-none">
-                            <AccordionTrigger className="py-2 text-sm text-[#0D0D12] hover:text-[#5B3CF5] hover:no-underline">AI Skills Directory</AccordionTrigger>
+                            <AccordionTrigger className="py-2 text-sm text-[#0D0D12] hover:text-[#111111] hover:no-underline">AI Skills Directory</AccordionTrigger>
                             <AccordionContent>
                               <div className="flex flex-col gap-2 pl-4 pb-2 border-l border-[#E4E4EB] ml-2">
                                 <Link className="text-sm text-[#6E6E82]" href="/tools/ai-skills" onClick={() => setMenuOpen(false)}>Browse All Skills</Link>
@@ -400,7 +402,7 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                             </AccordionContent>
                           </AccordionItem>
                           <AccordionItem value="item-3" className="border-none">
-                            <AccordionTrigger className="py-2 text-sm text-[#0D0D12] hover:text-[#5B3CF5] hover:no-underline">Collaborations</AccordionTrigger>
+                            <AccordionTrigger className="py-2 text-sm text-[#0D0D12] hover:text-[#111111] hover:no-underline">Collaborations</AccordionTrigger>
                             <AccordionContent>
                               <div className="flex flex-col gap-2 pl-4 pb-2 border-l border-[#E4E4EB] ml-2">
                                 <Link className="text-sm text-[#6E6E82]" href="/collaborations" onClick={() => setMenuOpen(false)}>Partner With Us</Link>
@@ -410,7 +412,7 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                             </AccordionContent>
                           </AccordionItem>
                           <AccordionItem value="item-4" className="border-none">
-                            <AccordionTrigger className="py-2 text-sm text-[#0D0D12] hover:text-[#5B3CF5] hover:no-underline">OpenClaw</AccordionTrigger>
+                            <AccordionTrigger className="py-2 text-sm text-[#0D0D12] hover:text-[#111111] hover:no-underline">OpenClaw</AccordionTrigger>
                             <AccordionContent>
                               <div className="flex flex-col gap-2 pl-4 pb-2 border-l border-[#E4E4EB] ml-2">
                                 <Link className="text-sm text-[#6E6E82]" href="/tools/openclaw/skillhub" onClick={() => setMenuOpen(false)}>SkillHub</Link>
@@ -424,11 +426,11 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                       </div>
 
                       <div className="space-y-3">
-                        <div className="text-xs font-bold uppercase tracking-widest text-[#5B3CF5]">Links</div>
+                        <div className="text-xs font-bold uppercase tracking-widest text-[#111111]">Links</div>
                         <div className="grid grid-cols-1 gap-2 pl-2">
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/pricing" onClick={() => setMenuOpen(false)}>Pricing</Link>
-                          <Link className="text-sm text-[#0D0D12] hover:text-[#5B3CF5]" href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/pricing" onClick={() => setMenuOpen(false)}>Pricing</Link>
+                          <Link className="text-sm text-[#0D0D12] hover:text-[#111111]" href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
                         </div>
                       </div>
                     </div>
@@ -485,7 +487,7 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#5B3CF5] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#7C5CFA] transition-all shadow-lg shadow-[#5B3CF5]/20"
+                className="inline-flex items-center justify-center rounded-full bg-[#111111] px-6 py-2.5 text-sm font-bold text-white hover:bg-[#333333] transition-all"
               >
                 Get Started →
               </Link>
@@ -535,7 +537,7 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
               </div>
 
               <div className="mt-6">
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#9999AA]">
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#767676]">
                   Results
                 </div>
                 <div className="mt-4 max-h-[60dvh] overflow-y-auto">
@@ -561,7 +563,7 @@ export function MegaMenu({ settings, whatsappHref }: Props) {
                           className="block rounded-2xl border border-[#E4E4EB] bg-white p-4 hover:border-[#5B3CF5]/40 hover:shadow-lg hover:shadow-[#5B3CF5]/10 transition-all"
                         >
                           <div className="flex items-center gap-2">
-                            <span className="text-[10px] font-bold uppercase tracking-widest text-[#5B3CF5] bg-[#F0ECFF] px-2 py-1 rounded-full">
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-[#111111] bg-[#F0ECFF] px-2 py-1 rounded-full">
                               {r.type === 'blog' ? 'Blog' : 'Affiliate'}
                             </span>
                           </div>

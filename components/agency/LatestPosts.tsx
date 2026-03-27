@@ -72,7 +72,7 @@ export function LatestPosts() {
           </p>
 
           <div className="mt-4 pt-4 border-t border-[#F3F3F8] flex items-center justify-between">
-            <span className="text-[10px] font-bold text-[#9999AA]">{post.authorName || 'Malik Farooq'}</span>
+            <span className="text-[10px] font-bold text-[#767676]">{post.authorName || 'Malik Farooq'}</span>
             <Link 
               href={`/blog/${post.slug}`}
               className="text-xs font-bold text-[#5B3CF5] flex items-center gap-1 group/btn"

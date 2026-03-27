@@ -1,32 +1,34 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import Testimonials from '@/components/Testimonials';
+import FounderCard from '@/components/FounderCard';
 
 export const metadata: Metadata = {
-  title: 'About MalikLogix | Pakistan\'s Leading AI Digital Agency',
+  title: 'About MalikLogix | AI Digital Agency — Malik Farooq',
   description: 'Based in Lahore, serving global brands with AI-first marketing, automation, and performance engineering.',
 };
 
 export default function AboutPage() {
   return (
-    <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <section className="mb-16">
-        <p className="text-xs font-mono tracking-[0.2em] text-[#5B3CF5] uppercase mb-4">About MalikLogix</p>
-        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0D0D12] leading-tight max-w-4xl">
+    <main className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <section className="mb-20">
+        <p className="text-[0.7rem] font-medium uppercase tracking-[0.08em] text-[#888888] mb-4">About MalikLogix</p>
+        <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#111111] leading-tight tracking-tight max-w-2xl">
           Pakistan&apos;s AI Digital Agency for Global Brands
         </h1>
-        <p className="mt-6 text-xl text-[#6E6E82] max-w-3xl leading-relaxed">
+        <p className="mt-8 text-lg text-[#555555] max-w-2xl leading-relaxed">
           Based in Lahore. Serving clients across the US, UK, Canada, and Gulf region. 
           We blend deep engineering with practical marketing to build AI systems 
           that ship, learn, and scale.
         </p>
       </section>
 
-      <section className="mb-20 grid md:grid-cols-2 gap-12 items-start">
-        <div>
-          <h2 className="font-heading text-3xl font-extrabold text-[#0D0D12] mb-6 border-l-4 border-[#5B3CF5] pl-6">Who We Are</h2>
-          <div className="space-y-4 text-[#6E6E82] leading-relaxed">
+      <section className="mb-24">
+        <h2 className="font-heading text-2xl font-bold text-[#111111] mb-8">Who We Are</h2>
+        <div className="grid md:grid-cols-1 gap-12 items-start mb-12">
+          <div className="space-y-6 text-[#555555] leading-relaxed max-w-3xl">
             <p>
-              MalikLogix was founded by <span className="text-[#0D0D12] font-bold">Malik Farooq</span> — an AI engineer and digital marketer 
+              MalikLogix was founded by <span className="text-[#111111] font-bold">Malik Farooq</span> — an AI engineer and digital marketer 
               who got tired of agencies that promised AI but delivered the same old campaigns 
               with a chatbot bolted on. The agency was built from scratch around one idea: 
               AI should be in the foundation of every marketing system, not layered on top.
@@ -38,51 +40,32 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        <div className="bg-[#F7F7FA] rounded-3xl p-8 border border-[#E4E4EB]">
-          <h2 className="font-heading text-2xl font-extrabold text-[#0D0D12] mb-6">Our Stack</h2>
-          <p className="text-[#6E6E82] mb-6 text-sm leading-relaxed">
-            We build on whatever gives clients the best reliability-to-cost ratio. Our core infrastructure includes:
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {['n8n', 'Make.com', 'Claude API', 'OpenAI', 'Next.js', 'Supabase', 'Vercel', 'Shopify'].map((tech) => (
-              <span key={tech} className="px-4 py-2 rounded-full bg-white border border-[#E4E4EB] text-xs font-bold text-[#0D0D12]">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
+        
+        {/* Founder Card Integration */}
+        <FounderCard />
       </section>
 
-      <section className="mb-20">
-        <h2 className="font-heading text-3xl font-extrabold text-[#0D0D12] mb-10 text-center">How We Think</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-3xl p-8 border border-[#E4E4EB] hover:shadow-xl transition-all duration-300">
-            <div className="w-12 h-12 rounded-2xl bg-[#F0ECFF] flex items-center justify-center mb-6 text-[#5B3CF5]">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3 className="font-heading text-xl font-bold text-[#0D0D12] mb-3">AI-first thinking</h3>
-            <p className="text-[#6E6E82] text-sm leading-relaxed">
+      <section className="mb-24 bg-[#f9f9f7] rounded-lg p-8 sm:p-12 border border-[#e5e5e5]">
+        <h2 className="font-heading text-2xl font-bold text-[#111111] mb-8">How We Think</h2>
+        <div className="grid md:grid-cols-3 gap-12">
+          <div>
+            <h3 className="font-heading text-lg font-bold text-[#111111] mb-3">AI-first thinking</h3>
+            <p className="text-[#555555] text-sm leading-relaxed">
               We don&apos;t sprinkle AI on top of old processes — we redesign the process 
               from the AI up. Every workflow we build is designed to learn and improve 
               over time, not just automate static tasks.
             </p>
           </div>
-          <div className="bg-white rounded-3xl p-8 border border-[#E4E4EB] hover:shadow-xl transition-all duration-300 text-center md:translate-y-4">
-             <div className="w-12 h-12 rounded-2xl bg-[#F0ECFF] flex items-center justify-center mb-6 mx-auto text-[#5B3CF5]">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <h3 className="font-heading text-xl font-bold text-[#0D0D12] mb-3">Engineering-grade execution</h3>
-            <p className="text-[#6E6E82] text-sm leading-relaxed">
+          <div>
+            <h3 className="font-heading text-lg font-bold text-[#111111] mb-3">Engineering-grade execution</h3>
+            <p className="text-[#555555] text-sm leading-relaxed">
               Everything we build is versioned, tested, and observable. You get 
               dashboards with real numbers, not monthly PDF reports full of screenshots.
             </p>
           </div>
-          <div className="bg-white rounded-3xl p-8 border border-[#E4E4EB] hover:shadow-xl transition-all duration-300 text-right">
-             <div className="w-12 h-12 rounded-2xl bg-[#F0ECFF] flex items-center justify-center mb-6 ml-auto text-[#5B3CF5]">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <h3 className="font-heading text-xl font-bold text-[#0D0D12] mb-3">Aligned incentives</h3>
-            <p className="text-[#6E6E82] text-sm leading-relaxed">
+          <div>
+            <h3 className="font-heading text-lg font-bold text-[#111111] mb-3">Aligned incentives</h3>
+            <p className="text-[#555555] text-sm leading-relaxed">
               We care about revenue, leads, and profit — not vanity metrics. 
               If a tactic doesn&apos;t move the needle after 60 days, we kill it 
               and try something that does.
@@ -91,16 +74,45 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="text-center bg-[#0D0D12] rounded-[3rem] p-12 md:p-20 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#5B3CF5] opacity-20 blur-[100px]" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#00C896] opacity-10 blur-[100px]" />
-        
-        <h2 className="font-heading text-3xl md:text-5xl font-extrabold mb-8 relative z-10">Ready to scale with AI?</h2>
-        <Link 
-          href="/contact" 
-          className="inline-flex items-center justify-center bg-[#5B3CF5] text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-[#7C5CFA] transition-all relative z-10 shadow-2xl shadow-[#5B3CF5]/40"
+      {/* Client Results Section */}
+      <section className="mb-24 py-12 border-t border-b border-[#e5e5e5]">
+        <h2 className="font-heading text-2xl font-bold text-[#111111] mb-12 text-center">Results from real engagements</h2>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div>
+            <div className="text-4xl font-bold text-[#111111] mb-2 tracking-tight">58%</div>
+            <div className="text-[10px] font-medium uppercase tracking-[0.08em] text-[#888888] leading-tight">Reduction in support tickets using AI triage</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-[#111111] mb-2 tracking-tight">3.2×</div>
+            <div className="text-[10px] font-medium uppercase tracking-[0.08em] text-[#888888] leading-tight">Increase in organic traffic within 90 days</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-[#111111] mb-2 tracking-tight">40%</div>
+            <div className="text-[10px] font-medium uppercase tracking-[0.08em] text-[#888888] leading-tight">Faster lead response using n8n + Claude</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-[#111111] mb-2 tracking-tight">10k+</div>
+            <div className="text-[10px] font-medium uppercase tracking-[0.08em] text-[#888888] leading-tight">Business owners in the newsletter</div>
+          </div>
+        </div>
+        <p className="mt-12 text-center text-[10px] font-medium text-[#888888] italic">
+          Numbers from anonymised client engagements. Results vary by business.
+        </p>
+      </section>
+
+      {/* Testimonials shared component */}
+      <Testimonials />
+
+      <section className="bg-[#111111] rounded-lg p-12 text-center text-white mt-12">
+        <h2 className="font-heading text-3xl font-bold mb-4">Want to build something with AI?</h2>
+        <p className="text-[#888888] mb-8 max-w-xl mx-auto">
+          Whether you need a marketing system, an automation pipeline, or a full AI strategy — let&apos;s talk.
+        </p>
+        <Link
+          href="/contact"
+          className="inline-block bg-white text-[#111111] px-10 py-4 rounded-md font-bold hover:bg-[#f3f3f0] transition-colors"
         >
-          Work with us →
+          Get in touch →
         </Link>
       </section>
     </main>

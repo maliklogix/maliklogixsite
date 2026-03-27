@@ -130,7 +130,7 @@ export default function HomeBlogRows() {
           {/* Page numbers */}
           {getPaginationGroup().map((p, index) => {
             if (p === '...') {
-              return <span key={`ellipsis-${index}`} className="px-2 text-[#9999AA] font-semibold">...</span>;
+              return <span key={`ellipsis-${index}`} className="px-2 text-[#767676] font-semibold">...</span>;
             }
             return (
               <button

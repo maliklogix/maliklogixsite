@@ -56,7 +56,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
       {posts.length === 0 ? (
         <div className="py-20 text-center border rounded-3xl bg-white/50 border-[#E4E4EB]">
           <p className="text-[#6E6E82] mb-2">No posts published yet. Check back soon!</p>
-          <p className="text-[10px] text-[#9999AA]">
+          <p className="text-[10px] text-[#767676]">
             Published count: {total}. DB env: {process.env.DATABASE_URL ? 'Yes' : 'No'}
           </p>
         </div>
@@ -179,7 +179,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
           )}
 
           {/* Post count */}
-          <p className="mt-6 text-center text-xs text-[#9999AA] font-medium">
+          <p className="mt-6 text-center text-xs text-[#767676] font-medium">
             Showing {(currentPage - 1) * POSTS_PER_PAGE + 1}–{Math.min(currentPage * POSTS_PER_PAGE, total)} of {total} articles
           </p>
         </>
