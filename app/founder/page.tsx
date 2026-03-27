@@ -65,12 +65,6 @@ export default async function FounderPage() {
 
   return (
     <>
-      <TopBar
-        topbar_active={settings.topbar_active}
-        topbar_text={settings.topbar_text}
-        topbar_cta_text={settings.topbar_cta_text}
-        topbar_cta_link={settings.topbar_cta_link}
-      />
       <MegaMenu settings={settings} whatsappHref={whatsAppHref} />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
         {/* Section 1 — Intro */}

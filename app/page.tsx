@@ -18,12 +18,6 @@ export default async function Home() {
 
   return (
     <>
-      <TopBar
-        topbar_active={settings.topbar_active}
-        topbar_text={settings.topbar_text}
-        topbar_cta_text={settings.topbar_cta_text}
-        topbar_cta_link={settings.topbar_cta_link}
-      />
       <MegaMenu settings={settings} whatsappHref={whatsAppHref} />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
         {/* Section: Hero */}
@@ -38,13 +32,13 @@ export default async function Home() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-[#111111] px-8 py-4 text-white font-bold hover:bg-[#333333] transition-colors"
+              className="inline-flex items-center justify-center rounded-md bg-[#4f46e5] px-8 py-4 text-white font-bold hover:bg-[#4338ca] transition-colors"
             >
               Get Free AI Audit →
             </Link>
             <Link
               href="/blog"
-              className="inline-flex items-center justify-center rounded-md border border-[#e5e5e5] bg-white px-8 py-4 text-[#111111] font-bold hover:bg-[#f9f9f7] transition-colors"
+              className="inline-flex items-center justify-center rounded-md border-[1.5px] border-[#4f46e5] bg-transparent px-8 py-4 text-[#4f46e5] font-bold hover:bg-[#eef2ff] transition-colors"
             >
               Explore Blog →
             </Link>
